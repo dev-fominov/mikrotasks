@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from '../tsk_2/Button';
 
 type CountType = {
@@ -21,6 +21,3 @@ function UseState(props: CountType) {
 }
 
 export default UseState
-
-{/* <button onClick={onClickBtn}>+1</button>
-			<button onClick={onClickBtnZero}>0</button> */}
