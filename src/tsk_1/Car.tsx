@@ -15,10 +15,10 @@ function Car(props: topCarsType) {
 
 			{props.topCars.map((info, index) => {
 				return (
-					<tr>
-						<td key={index}>{index + 1}</td>
-						<td key={index}>{info.manufacturer}</td>
-						<td key={index}>{info.model}</td>
+					<tr key={index}>
+						<td>{index + 1}</td>
+						<td>{info.manufacturer}</td>
+						<td>{info.model}</td>
 					</tr>
 				)
 			})}

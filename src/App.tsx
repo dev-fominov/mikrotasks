@@ -3,9 +3,10 @@ import './App.css';
 import Car from './tsk_1/Car';
 import Button from './tsk_2/Button';
 import UseState from './tsk_3/UseState';
-import Filter from './tsk_4/Filter';
+import CurrentMoney from './tsk_4/CurrentMoney';
 
 
+export type FilterType = 'all' | 'Dollars' | 'RUBLS'
 
 function App() {
 
@@ -43,9 +44,10 @@ function App() {
     { banknots: 'RUBLS', value: 50, number: ' v1234567890' },
   ])
 
-  const[filter, setFilter]=useState('all')
+  const[filter, setFilter]=useState<FilterType>('all')
 
   let currentMoney = money
+  
   if(filter === 'Dollars') {
     currentMoney = money.filter((f) => f.banknots === 'Dollars')
   }
@@ -54,7 +56,7 @@ function App() {
     currentMoney = money.filter((f) => f.banknots === 'RUBLS')
   }
 
-  const onClickFilter = (name: string) => {
+  const onClickFilter = (name: FilterType) => {
     setFilter(name)
   }
 
@@ -73,7 +75,8 @@ function App() {
       <br />
       <br />
       <br />
-      <>
+      <CurrentMoney currentMoney={currentMoney} onClickFilter={onClickFilter} />
+      {/* <>
         <ul>
           {currentMoney.map((m, index) => {
             return (
@@ -84,7 +87,7 @@ function App() {
         <Button name={'All'} callBack={() => onClickFilter('all')} />
         <Button name={'Dollars'} callBack={() => onClickFilter('Dollars')} />
         <Button name={'RUBLS'} callBack={() => onClickFilter('RUBLS')} />
-      </>
+      </> */}
 
     </div>
   );

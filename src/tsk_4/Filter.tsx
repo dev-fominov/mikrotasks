@@ -1,6 +1,6 @@
 import React from "react";
 
-type MoneyType = {
+export type MoneyType = {
 	banknots: string
 	value: number
 	number: string
