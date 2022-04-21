@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Car from './tsk_1/Car';
 import Button from './tsk_2/Button';
+import Button2 from './tsk_2/Button2';
 import UseState from './tsk_3/UseState';
 import CurrentMoney from './tsk_4/CurrentMoney';
 import Input from './tsk_5/Input';
@@ -68,18 +69,21 @@ function App() {
     { message: 'message1' }
   ])
 
+  let [title, setTitle] = useState('')
+
   const addMessage = (title: string) => {
-    let newMessage = {message: title};
+    let newMessage = { message: title };
     setMessage([newMessage, ...message])
   }
 
   const onClickButtonHandler = () => {
-		addMessage(title)
-		setTitle('')
-	}
-
-  let [title, setTitle] = useState('')
-  console.log(title)
+    addMessage(title)
+    setTitle('')
+  }
+  
+  const Button1Foo = (name: string) => {
+    console.log(name)
+  }
   return (
     <div>
       <Car topCars={topCars} />
@@ -109,6 +113,11 @@ function App() {
           <div key={index}>{el.message}</div>
         )
       })}
+
+      <br />
+      <br />
+      <br />
+      <Button2 name={'click'} callBack={() => Button1Foo('dfhfdgh')} />
 
     </div>
   );

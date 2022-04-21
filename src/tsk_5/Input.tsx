@@ -1,8 +1,8 @@
 import React, { ChangeEvent } from "react";
 
 type InputPropsType = {
-	setTitle: (title: string)=>void,
 	title: string
+	setTitle: (title: string)=>void,
 }
 
 function Input(props: InputPropsType) {
